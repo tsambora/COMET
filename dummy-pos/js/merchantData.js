@@ -35,16 +35,16 @@ export const cart = [
     {
         name: 'Kumala Blouse',
         amount: 1,
-        price: 'USD 20.00'
+        price: '20.00'
     },
     {
         name: 'Tinderella Leaves',
         amount: 2,
-        price: 'USD 50.00'
+        price: '50.00'
     },
     {
         name: 'Sophia A Line Blouse',
         amount: 1,
-        price: 'USD 40.00'
+        price: '40.00'
     }
 ]
