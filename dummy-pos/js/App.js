@@ -12,7 +12,9 @@ const App = React.createClass({
   render () {
     return (
       <Provider store={store}>
-        <AppContainer centered>
+        <AppContainer
+          centered
+          inline>
           <Header />
           <Match exactly pattern='/' component={Home} />
           <Footer />
