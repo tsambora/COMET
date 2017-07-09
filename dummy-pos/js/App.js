@@ -7,8 +7,6 @@ import store from './store'
 import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
-import Blog from './Blog'
-import Glitch from './Glitch'
 
 const App = React.createClass({
   render () {
@@ -17,8 +15,6 @@ const App = React.createClass({
         <AppContainer centered>
           <Header />
           <Match exactly pattern='/' component={Home} />
-          <Match exactly pattern='/blog' component={Blog} />
-          <Match exactly pattern='/glitch-and-performance-issue' component={Glitch} />
           <Footer />
         </AppContainer>
       </Provider>
