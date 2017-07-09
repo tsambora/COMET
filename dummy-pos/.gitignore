@@ -1,0 +1,14 @@
+public/bundle.js
+public/bundle.js.gz
+public/styles.css
+node_modules/
+.eslintcache
+coverage
+.nyc_output
+.DS_Store
+*.map
+*.bundle.js
+_site/
+.sass-cache/
+*.iml
+.idea/
