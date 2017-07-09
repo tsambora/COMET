@@ -21,7 +21,7 @@ export default class AppHeader extends Component {
               size='small'
               strong
               margin='none'>
-              COMET Merchant
+              Sophia's Dress and Beyond
             </Heading>
           </Link>
         </Box>
