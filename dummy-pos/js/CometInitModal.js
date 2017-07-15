@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Box from 'grommet/components/Box'
-import Button from 'grommet/components/Button'
 import Heading from 'grommet/components/Heading'
 import Layer from 'grommet/components/Layer'
 import Image from 'grommet/components/Image'
