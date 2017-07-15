@@ -23,9 +23,12 @@ export default class Cart extends Component {
         ));
 
         return (
-            <Box basis='2/3'>
+            <Box
+                pad='none'
+                basis='2/3'>
                 <Tiles
                     fill
+                    pad={{vertical: 'small', horizontal: 'none'}}
                     flush={false}>
                     {catalogDisplay}
                 </Tiles>
