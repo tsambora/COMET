@@ -4,6 +4,7 @@ import Header from 'grommet/components/Header'
 import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
 import Anchor from 'grommet/components/Anchor'
+import CartIcon from 'grommet/components/icons/base/Cart'
 
 export default class AppHeader extends Component {
   render () {
@@ -11,21 +12,42 @@ export default class AppHeader extends Component {
       <Header
         direction='row'
         full='horizontal'
-        pad='medium'
         colorIndex='neutral-2-a'>
-        <Box basis='1/2'>
+        <Box
+          basis='1/2'
+          pad='small'>
           <Link
             to='/'
             style={{ color: '#f5f5f5' }}>
             <Heading
               size='small'
+              tag='h2'
               strong
               margin='none'>
-              Sophia's Dress and Beyond
+                <CartIcon size='medium' colorIndex='light-1' />  Sophie's Store <i>admin</i>
             </Heading>
           </Link>
         </Box>
-        <Box basis='1/2' />
+        <Box
+          basis='1/2'
+          pad={{horizontal: 'small', vertical: 'none'}}
+          direction='row'
+          justify='end'>
+          <Box
+            pad='small'>
+            Inventory
+          </Box>
+          <Box
+            pad='small'>
+            Accounting
+          </Box>
+          <Box
+            pad='small'
+            size={{height: '1rem', width: 'auto'}}
+            colorIndex='neutral-2-t'>
+            Cashier
+          </Box>
+        </Box>
       </Header>
     )
   }
