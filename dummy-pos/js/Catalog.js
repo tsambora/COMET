@@ -8,8 +8,8 @@ import { catalog } from './merchantData'
 
 export default class Cart extends Component {
     render() {
-        const catalogDisplay = catalog.map(item => (
-            <Tile>
+        const catalogDisplay = catalog.map((item, index) => (
+            <Tile key={index}>
                 <Card
                     pad='small'
                     colorIndex='light-1'

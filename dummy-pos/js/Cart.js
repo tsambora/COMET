@@ -9,8 +9,8 @@ import { cart } from './merchantData'
 
 export default class Cart extends Component {
     render() {
-        const cartDisplay = cart.map(item => (
-            <TableRow>
+        const cartDisplay = cart.map((item, index) => (
+            <TableRow key={index}>
                 <td>
                     {item.name}
                 </td>

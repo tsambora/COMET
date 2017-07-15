@@ -40,7 +40,6 @@ export default class AppHeader extends Component {
                     </Box>
                     <Box
                         pad='small'
-                        size={{ height: '1rem', width: 'auto' }}
                         colorIndex='neutral-2-t'>
                         Cashier
                     </Box>
