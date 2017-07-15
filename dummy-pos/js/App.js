@@ -9,19 +9,19 @@ import Footer from './Footer'
 import Home from './Home'
 
 const App = React.createClass({
-  render () {
-    return (
-      <Provider store={store}>
-        <AppContainer
-          centered
-          inline>
-          <Header />
-          <Match exactly pattern='/' component={Home} />
-          <Footer />
-        </AppContainer>
-      </Provider>
-    )
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <AppContainer
+                    centered
+                    inline>
+                    <Header />
+                    <Match exactly pattern='/' component={Home} />
+                    <Footer />
+                </AppContainer>
+            </Provider>
+        )
+    }
 })
 
 export default App

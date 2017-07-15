@@ -17,9 +17,9 @@ const path = require('path')
 const server = express()
 
 server.get('*.js', function (req, res, next) {
-  req.url = req.url + '.gz'
-  res.set('Content-Encoding', 'gzip')
-  return next()
+    req.url = req.url + '.gz'
+    res.set('Content-Encoding', 'gzip')
+    return next()
 })
 
 server.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -27,15 +27,15 @@ server.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 server.use('/public', express.static('./public'))
 
 server.use((req, res) => {
-  const context = ReactRouter.createServerRenderContext()
-  const body = ReactDOMServer.renderToString(
-    React.createElement(ServerRouter, {location: req.url, context: context},
-      React.createElement(App)
+    const context = ReactRouter.createServerRenderContext()
+    const body = ReactDOMServer.renderToString(
+        React.createElement(ServerRouter, { location: req.url, context: context },
+            React.createElement(App)
+        )
     )
-  )
 
-  res.write(template({body: body}))
-  res.end()
+    res.write(template({ body: body }))
+    res.end()
 })
 
 console.log('listening on ' + port)
