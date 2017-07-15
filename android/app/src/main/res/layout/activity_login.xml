@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="64sp" />
+
+    <View
+        android:layout_width="160dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="64dp"
+        android:background="@android:color/darker_gray" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/keypad1"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_1"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad2"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_2"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad3"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_3"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/keypad4"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_4"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad5"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_5"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad6"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_6"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/keypad7"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_7"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad8"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_8"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/keypad9"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_9"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/keypadBackspace"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_backspace" />
+
+            <Button
+                android:id="@+id/keypad0"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/button_keypad_0"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <ImageButton
+                android:id="@+id/keypadEnter"
+                android:layout_width="92dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_ok" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/fingerprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_fingerprint" />
+</LinearLayout>
