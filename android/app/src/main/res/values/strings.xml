@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Comet</string>
+
+    <string name="button_keypad_1">1</string>
+    <string name="button_keypad_2">2</string>
+    <string name="button_keypad_3">3</string>
+    <string name="button_keypad_4">4</string>
+    <string name="button_keypad_5">5</string>
+    <string name="button_keypad_6">6</string>
+    <string name="button_keypad_7">7</string>
+    <string name="button_keypad_8">8</string>
+    <string name="button_keypad_9">9</string>
+    <string name="button_keypad_0">0</string>
+</resources>
