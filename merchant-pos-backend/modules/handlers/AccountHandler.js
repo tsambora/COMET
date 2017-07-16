@@ -9,7 +9,7 @@ router.get('/all', function(req, res) {
   })
 })
 
-router.get('/balance/:address', function(req, res) {
+router.get('/:address/balance', function(req, res) {
   const address = req.params.address
   res.send({
     result: AccountService.getBalance(address)
