@@ -13,11 +13,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
 
-var routes = require('./handlers/routes.js')
+var HomeHandler = require('./handlers/HomeHandler.js')
 var AccountHandler = require('./handlers/AccountHandler.js')
 var TransactionHandler = require('./handlers/TransactionHandler.js')
 
-app.use('/', routes)
+app.use('/', HomeHandler)
 app.use('/accounts', AccountHandler)
 app.use('/transactions', TransactionHandler)
 
