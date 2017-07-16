@@ -14,7 +14,9 @@ API List
 
 ### [GET] /v1/account/all
 Get all accounts.
+
 Input: ```none```
+
 Output:
 ```json
 {
@@ -34,7 +36,9 @@ Output:
 ```
 
 ### [GET] /v1/account/<addr>/balance
+
 Get balance of certain account.
+
 Input: 
 ```
 // Params:
@@ -51,6 +55,7 @@ Output:
 
 ### [POST] /v1/transaction/
 Send ether between two accounts.
+
 Input: 
 ```
 // URL:
@@ -73,6 +78,7 @@ Output:
 
 ### [GET] /v1/transaction/<tx_hash>
 Get transaction details.
+
 Input: 
 ```
 // Params:
