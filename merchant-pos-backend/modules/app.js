@@ -14,10 +14,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
 
 var routes = require('./handlers/routes.js')
-var ExampleHandler = require('./handlers/ExampleHandler.js')
+var AccountHandler = require('./handlers/AccountHandler.js')
+var TransactionHandler = require('./handlers/TransactionHandler.js')
 
 app.use('/', routes)
-app.use('/example', ExampleHandler)
+app.use('/v1/account', AccountHandler)
+app.use('/v1/transaction', TransactionHandler)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
