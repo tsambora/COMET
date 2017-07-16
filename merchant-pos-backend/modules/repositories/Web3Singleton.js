@@ -8,6 +8,7 @@ const Web3Singleton = (function () {
   const web3 = new Web3(new Web3.providers.HttpProvider(CONFIG.eth.host))
  
   const init = () => {
+    console.log('=== connecting '+CONFIG.eth.host)
     return {
       web3: web3,
       getAllAccounts: () => EthUtils.getAllAccounts(web3),
