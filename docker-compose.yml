@@ -1,0 +1,22 @@
+version: '2'
+services:
+  dummy-pos-backend:
+    build: dummy-pos-backend
+    restart: on-failure
+    container_name: dummy-pos-backend
+    hostname: dummy-pos-backend
+    links:
+      - test-network
+    depends_on:
+      - test-network
+    environment:
+      - ETH_HOST=http://test-network:8545
+    ports:
+      - "3000:3000"
+  test-network:
+    build: test-network
+    restart: on-failure
+    container_name: test-network
+    hostname: test-network
+    ports:
+      - "8545:8545"
