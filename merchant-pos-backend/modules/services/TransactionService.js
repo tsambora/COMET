@@ -5,6 +5,11 @@ const Web3Singleton = require("../repositories/Web3Singleton.js")
 
 var TransactionService = function () {}
 
+TransactionService.prototype.getTransaction = (txHash) => {
+  const web3Instance = Web3Singleton.getInstance()
+  return web3Instance.getTransaction(txHash)
+}
+
 TransactionService.prototype.transact = (to, from, pass, value) => {
   const web3Instance = Web3Singleton.getInstance()
   return web3Instance.transact(to, from, value)

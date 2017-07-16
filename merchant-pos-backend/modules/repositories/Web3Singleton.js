@@ -12,6 +12,7 @@ const Web3Singleton = (function () {
       web3: web3,
       getAllAccounts: () => EthUtils.getAllAccounts(web3),
       getBalance: (address) => EthUtils.getBalance(web3, address),
+      getTransaction: (txHash) => web3.eth.getTransaction(txHash),
       transact: (to, from, value) => EthUtils.transact(web3, to, from, value),
     }
   }
