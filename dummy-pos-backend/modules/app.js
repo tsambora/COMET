@@ -3,12 +3,14 @@ var path = require('path')
 var favicon = require('serve-favicon')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var cors = require('cors')
 
 var app = express()
 var env = process.env.NODE_ENV || 'development'
 app.locals.ENV = env
 app.locals.ENV_DEVELOPMENT = env == 'development'
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
