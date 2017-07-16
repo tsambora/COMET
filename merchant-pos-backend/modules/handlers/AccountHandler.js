@@ -9,11 +9,11 @@ router.get('/all', function(req, res) {
   })
 })
 
-// router.get('/:id', function(req, res) {
-//   const id = req.params.id
-//   res.send({
-//     result: AccountService.method1(id)
-//   })
-// })
+router.get('/balance/:address', function(req, res) {
+  const address = req.params.address
+  res.send({
+    result: AccountService.getBalance(address)
+  })
+})
 
 module.exports = router

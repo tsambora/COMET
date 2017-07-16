@@ -10,4 +10,9 @@ AccountService.prototype.getAll = () => {
   return web3Instance.getAllAccounts()
 }
 
+AccountService.prototype.getBalance = (address) => {
+  const web3Instance = Web3Singleton.getInstance()
+  return web3Instance.getBalance(address)
+}
+
 module.exports = new AccountService()
