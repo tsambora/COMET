@@ -3,7 +3,6 @@ var router = express.Router()
 
 const TransactionService = require('../services/TransactionService.js')
 
-
 router.get('/:txhash', function(req, res) {
   const txHash = req.params.txhash
   res.send({

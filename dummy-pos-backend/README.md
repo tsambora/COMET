@@ -1,18 +1,27 @@
-# MERCHANT-POS-BACKEND
+# DUMMY-POS-BACKEND
+A dummy for Comet Point of Sale app. Real merchant can use their own implementation to write to the blockchain.
+
+## How to install
+```
+1. npm install
+2. npm install -g ethereumjs-testrpc
+3. testrpc
+4. npm start
+```
 
 ## API List
 
 API List
 ```
-[GET] /v1/account/all
-[GET] /v1/account/<addr>/balance
-[GET] /v1/transaction/<tx_hash>
-[POST] /v1/transaction/
+[GET] /accounts
+[GET] /accounts/{address}/balance
+[GET] /transactions/{transaction_hash}
+[POST] /transactions
 ```
 
 ## EXAMPLES
 
-### [GET] /v1/account/all
+### [GET] /accounts
 Get all accounts.
 
 Input: ```none```
@@ -35,7 +44,7 @@ Output:
 }
 ```
 
-### [GET] /v1/account/<addr>/balance
+### [GET] /accounts/{address}/balance
 
 Get balance of certain account.
 
@@ -44,7 +53,7 @@ Input:
 // Params:
 // hash address of an account
 // URL:
-http://baseurl:port/v1/account/0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0/balance
+http://baseurl:port/accounts/0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0/balance
 ```
 Output:
 ```json
@@ -53,13 +62,13 @@ Output:
 }
 ```
 
-### [POST] /v1/transaction/
+### [POST] /transactions
 Send ether between two accounts.
 
 Input: 
 ```
 // URL:
-http://baseurl:port/v1/transaction/
+http://baseurl:port/transactions
 // JSON:
 {
   "to": "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
@@ -76,7 +85,7 @@ Output:
 }
 ```
 
-### [GET] /v1/transaction/<tx_hash>
+### [GET] /transactions/{transaction_hash}
 Get transaction details.
 
 Input: 
