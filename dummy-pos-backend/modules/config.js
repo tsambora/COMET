@@ -3,7 +3,7 @@ require('dotenv').config()
 const config = {
   server: {},
   eth: {
-    host: process.env.ETH_HOST || 'http://kafka:8545',
+    host: process.env.ETH_HOST || 'http://localhost:8545',
   },
   db: {
     host: process.env.DB_HOST || '',
