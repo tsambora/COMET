@@ -12,4 +12,8 @@
     <string name="button_keypad_8">8</string>
     <string name="button_keypad_9">9</string>
     <string name="button_keypad_0">0</string>
+
+    <string name="pound">\u00a3</string>
+    <string name="instruction">Enter transaction token provided by your merchant.</string>
+    <string name="button_submit">Proceed</string>
 </resources>
