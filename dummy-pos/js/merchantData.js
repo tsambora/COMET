@@ -1,33 +1,33 @@
 export const catalog = [
     {
-        img: 'https://cdn.shopify.com/s/files/1/0784/0207/products/1_ed68e84f-41a4-4618-a47b-1b539bc79d6d.jpg',
+        img: 'http://i1.adis.ws/i/boohooamplience/azz03030_black_xl?$product_page_main_magic_zoom$',
         label: 'Kumala Blouse',
-        price: 'USD 20.00'
+        price: '$20.00'
     },
     {
-        img: 'https://s-media-cache-ak0.pinimg.com/736x/e3/e3/b8/e3e3b805e30f9b71ba6434909849eb80--hoco-dresses-a-line-dresses.jpg',
+        img: 'http://assets.myntassets.com/assets/images/1639356/2016/11/28/11480329892483-Marie-Claire-Women-Blue-Printed-Fit-and-Flare-Dress-5931480329892316-3.jpg',
         label: 'Magina Dress',
-        price: 'USD 27.50'
+        price: '$27.50'
     },
     {
-        img: 'http://assets.myntassets.com/assets/images/1778005/2017/2/23/11487833516683-naughty-ninos-Girls-Dresses-9381487833516597-2.jpg',
-        label: 'Polkadot Mini Dress',
-        price: 'USD 32.00'
+        img: 'http://demandware.edgesuite.net/sits_pod29/dw/image/v2/AAXX_PRD/on/demandware.static/-/Sites-bcbg-site-catalog/default/dw28440065/images/large/UVE68K08_001_a.jpg?sw=500&sh=791&sm=fit',
+        label: 'Moccachino See Thru',
+        price: '$32.00'
     },
     {
-        img: 'https://gloimg.dresslily.com/L/pdm-product-pic/Clothing/2016/10/31/goods-img/1492390503125491342.jpg',
-        label: 'Opera Plain Dress',
-        price: 'USD 15.00'
+        img: 'https://sits-pod29.demandware.net/dw/image/v2/AAXX_PRD/on/demandware.static/-/Sites-bcbg-site-catalog/default/dw8eef59d6/images/large/WWR65L28_G75.jpg?sw=1268&sh=1992&sm=fit',
+        label: 'Opera Americana Long',
+        price: '$15.00'
     },
     {
-        img: 'https://s-media-cache-ak0.pinimg.com/736x/ac/ba/d9/acbad9b0d9aeb233da529f5444b03281--junior-homecoming-dresses-homecoming-dress-shorts.jpg',
+        img: 'https://cdn.tobi.com/product_images/md/1/grey-emalea-multi-strap-skater-dress.jpg',
         label: 'Tinderella Leaves',
-        price: 'USD 25.00'
+        price: '$25.00'
     },
     {
-        img: 'https://images-na.ssl-images-amazon.com/images/I/51f7mMA+tjL._AC_UL260_SR200,260_.jpg',
+        img: 'https://cdn.lulus.com/images/product/xlarge/2136492_394102.jpg',
         label: 'Sophia A Line Blouse',
-        price: 'USD 40.00'
+        price: '$40.00'
     },
 ];
 
@@ -46,5 +46,10 @@ export const cart = [
         name: 'Sophia A Line Blouse',
         amount: 1,
         price: '40.00'
+    },
+    {
+        name: 'Tax',
+        amount: '',
+        price: '11.00'
     }
 ]
