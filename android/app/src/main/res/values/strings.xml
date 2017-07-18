@@ -14,6 +14,9 @@
     <string name="button_keypad_0">0</string>
 
     <string name="pound">\u00a3</string>
-    <string name="instruction">Enter transaction token provided by your merchant.</string>
+    <string name="instruction_token">Enter transaction token provided by your merchant.</string>
     <string name="button_submit">Proceed</string>
+
+    <string name="instruction_qr">Please let your merchant scan the QR code below to complete your transaction</string>
+    <string name="instruction_response">or give the following response code to your merchant.</string>
 </resources>

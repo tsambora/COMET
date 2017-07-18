@@ -56,7 +56,7 @@
                 android:layout_marginRight="24dp"
                 android:layout_marginTop="36dp"
                 android:gravity="center"
-                android:text="@string/instruction"
+                android:text="@string/instruction_token"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="italic" />
