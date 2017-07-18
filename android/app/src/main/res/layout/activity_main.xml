@@ -28,7 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/submit"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorBg">
 
         <RelativeLayout
             android:layout_width="match_parent"
