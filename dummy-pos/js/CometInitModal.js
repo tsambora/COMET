@@ -42,7 +42,7 @@ export default class CometInitModal extends Component {
                     pad='small'>
                     <Image
                         size='small'
-                        src='public/img/ceki.png' />
+                        src='public/img/comet.png' />
                     <Box
                         align='center'
                         pad='small'>
