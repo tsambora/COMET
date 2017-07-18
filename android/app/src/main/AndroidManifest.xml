@@ -29,6 +29,10 @@
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
 
+        <activity android:name=".activities.ResponseActivity" android:label="@string/app_name">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.MainActivity"/>
+        </activity>
+
     </application>
 
 </manifest>
