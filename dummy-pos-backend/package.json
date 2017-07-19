@@ -16,6 +16,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.13.3",
     "serve-favicon": "^2.3.0",
+    "solc": "^0.4.13",
     "web3": "^0.19.1",
     "winston": "^2.3.1",
     "winston-papertrail": "^1.0.5"
