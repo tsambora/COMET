@@ -20,9 +20,19 @@ const transact = (web3, acc1, acc2, value) => {
   return txHash
 }
 
+const getRSVFromSignature = (web3, signature) => {
+  const res = {
+    r: "0x" + signature.substr(0, 64),
+    s: "0x" + signature.substr(64, 64),
+    v: web3.toHex(web3.toDecimal(signature.substr(128, 2)) + 27)
+  }
+  return res
+}
+
 module.exports = {
   getAllAccounts: getAllAccounts,
   getBalance: getBalance,
+  getRSVFromSignature: getRSVFromSignature,
   lockAccount: lockAccount,
   transact: transact,
   unlockAccount: unlockAccount,
