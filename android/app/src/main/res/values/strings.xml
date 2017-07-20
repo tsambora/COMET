@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Comet</string>
+    <string name="app_name">COMET</string>
 
     <string name="button_keypad_1">1</string>
     <string name="button_keypad_2">2</string>
@@ -12,4 +12,11 @@
     <string name="button_keypad_8">8</string>
     <string name="button_keypad_9">9</string>
     <string name="button_keypad_0">0</string>
+
+    <string name="pound">\u00a3</string>
+    <string name="instruction_token">Enter transaction token provided by your merchant.</string>
+    <string name="button_submit">Proceed</string>
+
+    <string name="instruction_qr">Please let your merchant scan the QR code below to complete your transaction</string>
+    <string name="instruction_response">or give the following response code to your merchant.</string>
 </resources>
