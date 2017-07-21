@@ -14,10 +14,11 @@ router.post('/', function(req, res) {
   const payload = req.body
   const accTo = payload.to
   const accFrom = payload.from
-  const pass = payload.pass
+  const transactionToken = payload.token
+  const signature = payload.signature
   const value = payload.value
   res.send({
-    result: TransactionService.transact(accTo, accFrom, pass, value)
+    result: TransactionService.transact(accTo, accFrom, transactionToken, signature, value)
   })
 })
 

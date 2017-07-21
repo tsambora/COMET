@@ -8,4 +8,5 @@ const EthUtils = require("../modules/utils/EthUtils")
 const web3 = new Web3(new Web3.providers.HttpProvider(CONFIG.eth.host))
 
 const addr = process.argv[2]
-console.log(web3.eth.sign(addr, web3.sha3(process.argv[3])))
+const transactionToken = process.argv[3]
+console.log(EthUtils.sign(web3, addr, transactionToken))

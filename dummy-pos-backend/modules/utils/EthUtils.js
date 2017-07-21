@@ -29,10 +29,13 @@ const getRSVFromSignature = (web3, signature) => {
   return res
 }
 
+const sign = (web3, addr, transactionToken) => web3.eth.sign(addr, web3.sha3(transactionToken))
+
 module.exports = {
   getAllAccounts: getAllAccounts,
   getBalance: getBalance,
   getRSVFromSignature: getRSVFromSignature,
+  sign: sign,
   lockAccount: lockAccount,
   transact: transact,
   unlockAccount: unlockAccount,
