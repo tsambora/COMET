@@ -13,6 +13,10 @@ import android.widget.TextView
 import com.cekiboy.comet.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
+import org.web3j.crypto.ECKeyPair
+import org.web3j.crypto.Hash
+import org.web3j.crypto.Sign
+import java.math.BigInteger
 
 /**
  * Created by itock on 7/18/2017.
@@ -62,8 +66,19 @@ class ResponseActivity : AppCompatActivity() {
     }
 
     private fun generateTokenResponse(token: String): String {
-        // TODO: generate token response
-        return token
+        val privateKey = "0000000000000000000000000000000000000000000000000000000000000001"
+        val keyPair = ECKeyPair.create(BigInteger(privateKey, 16))
+
+        val messageHash = Hash.sha3(token.toByteArray())
+        val signedMessage = Sign.signMessage(messageHash, keyPair)
+
+        var r = ""
+        for (b in signedMessage.r) r += String.format("%02x", b)
+
+        var s = ""
+        for (b in signedMessage.s) s += String.format("%02x", b)
+
+        return "0x$r${s}0${signedMessage.v-27}"
     }
 
     private fun generateQr(text: String): Bitmap {
