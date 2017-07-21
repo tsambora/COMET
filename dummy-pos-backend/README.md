@@ -71,9 +71,10 @@ Input:
 http://baseurl:port/transactions
 // JSON:
 {
-  "to": "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
   "from": "0xe707bd7388f0c381904c820b91a273d07c0e6c8d",
-  "pass": "rahasia",
+  "to": "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
+  "transaction_token": "123456",
+  "signature": "0xa2c855998e0f1bf024e87d3de1859a4a9582da26783c5c06e961a00180be189f233a604f767d324abc67615646f9cf5320edc96337e6122347d7eb3d7999b66b00", //generated from hashed transaction_token signed with private key
   "value": "10"
 }
 ```
