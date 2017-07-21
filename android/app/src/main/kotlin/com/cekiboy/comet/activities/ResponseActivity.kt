@@ -1,5 +1,8 @@
 package com.cekiboy.comet.activities
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.NavUtils
@@ -42,6 +45,11 @@ class ResponseActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = null
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        textViewResponse?.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            clipboard.primaryClip = ClipData.newPlainText(null, textViewResponse?.text)
+        }
 
         val token = intent.getStringExtra(EXTRA_TRANSACTION_TOKEN)
 
