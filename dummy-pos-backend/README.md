@@ -15,7 +15,6 @@ API List
 ```
 [GET] /accounts
 [GET] /accounts/{address}/balance
-[GET] /transactions/{transaction_hash}
 [POST] /transactions
 ```
 
@@ -30,16 +29,9 @@ Output:
 ```json
 {
   "result": [
-    "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
-    "0xe707bd7388f0c381904c820b91a273d07c0e6c8d",
-    "0xa70902090bdd36b126d498d2115f5507c9deeb20",
-    "0x982209f3c74b5105a49a31ca0cdb85c8611dc07a",
-    "0x36e87bf8d899c637092afa0081590d9b86e03f20",
-    "0x9bfadc8d42ae4ae41ae504ba01b010696fdf6267",
-    "0x1cdc92554876223a680270b07c4a6df343100d6c",
-    "0x34ce6076e8a70c483f81d3ae28c01fa0f4945538",
-    "0xa9d51a3ed111534d79534c618dcdbf5c202f7f08",
-    "0xb7d3d85845e307910b603b6d4d9a7153cce5a3d9"
+    "0xff06ad5d076fa274b49c297f3fe9e29b5ba9aadc",
+    "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+    "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf"
   ]
 }
 ```
@@ -71,46 +63,20 @@ Input:
 http://baseurl:port/transactions
 // JSON:
 {
-  "from": "0xe707bd7388f0c381904c820b91a273d07c0e6c8d",
-  "to": "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
-  "transaction_token": "123456",
-  "signature": "0xa2c855998e0f1bf024e87d3de1859a4a9582da26783c5c06e961a00180be189f233a604f767d324abc67615646f9cf5320edc96337e6122347d7eb3d7999b66b00", //generated from hashed transaction_token signed with private key
-  "value": "10"
+  "to": "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+  "from": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+  "signature": "5c3251e5f2e977588b4716ccd26fe96fa4a2fc349c4b4c4c0fcb329c252455e338f8cf8ac5489f082159ed5e1173f8d9ceb3e46f18a60891de08ce21dbe9853d01",
+  "value": "100",
+  "token": "000001"
 }
-```
-Output:
-```json
-// transaction hash (tx hash)
-{
-  "result": "0x4f35357fb2c52b453c28c15aedb60572da82cd70d6b597258193b65c522ea1d3"
-}
-```
-
-### [GET] /transactions/{transaction_hash}
-Get transaction details.
-
-Input: 
-```
-// Params:
-// transaction hash
-// URL:
-http://baseurl:port/v1/transaction/0x4f35357fb2c52b453c28c15aedb60572da82cd70d6b597258193b65c522ea1d3
 ```
 Output:
 ```json
 {
   "result": {
-    "hash": "0x4f35357fb2c52b453c28c15aedb60572da82cd70d6b597258193b65c522ea1d3",
-    "nonce": 0,
-    "blockHash": "0x62246e859f817eb961bf940378bd47b78889bc9321307ea3dcf58846e43f605e",
-    "blockNumber": 1,
-    "transactionIndex": 0,
-    "from": "0xe707bd7388f0c381904c820b91a273d07c0e6c8d",
-    "to": "0xf0604c33ea77db0d0b63dd27f54aecfd62b48dd0",
-    "value": "10000000000000000000",
-    "gas": 90000,
-    "gasPrice": "20000000",
-    "input": "0x0"
+    "from": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+    "balance_before": "1000",
+    "balance_after": "900"
   }
 }
 ```
