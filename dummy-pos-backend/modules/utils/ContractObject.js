@@ -47,7 +47,7 @@ const ContractObject = function (web3, name, contract_path) {
     })
   }
 
-  this.getContractInstanceFromAddress = (address) => this.contract.at(address)
+  this.getContractInstanceFromAddress = (address) => new Promise((resolve, reject) => resolve(this.contract.at(address)))
 }
 
 module.exports = ContractObject
