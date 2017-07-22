@@ -18,6 +18,7 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import org.web3j.crypto.ECKeyPair
 import org.web3j.crypto.Sign
+import org.web3j.crypto.Credentials
 
 /**
  * Created by itock on 7/18/2017.
@@ -31,6 +32,7 @@ class ResponseActivity : AppCompatActivity() {
     private var toolbar: Toolbar? = null
     private var imageViewQr: ImageView? = null
     private var textViewResponse: TextView? = null
+    private var privateKey = "208065a247edbe5df4d86fbdc0171303f23a76961be9f6013850dd2bdc759bbb"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +54,10 @@ class ResponseActivity : AppCompatActivity() {
         val token = intent.getStringExtra(EXTRA_TRANSACTION_TOKEN)
 
         if (!token.isNullOrEmpty()) {
-            val response = generateTokenResponse(token)
+            val signedToken = generateTokenResponse(token)
+            val credentials = Credentials.create(privateKey)
+            val address = credentials.getAddress()
+            val response = address + "," + signedToken
             val bitmap = generateQr(response)
 
             imageViewQr?.setImageBitmap(bitmap)
@@ -105,7 +110,6 @@ class ResponseActivity : AppCompatActivity() {
             return result.toString()
         }
 
-        val privateKey = "208065a247edbe5df4d86fbdc0171303f23a76961be9f6013850dd2bdc759bbb"
         val keyPair = ECKeyPair.create(toByteArray(privateKey))
 
         val signedMessage = Sign.signMessage(token.toByteArray(), keyPair)
