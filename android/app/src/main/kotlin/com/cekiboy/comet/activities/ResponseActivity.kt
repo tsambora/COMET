@@ -17,9 +17,7 @@ import com.cekiboy.comet.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import org.web3j.crypto.ECKeyPair
-import org.web3j.crypto.Hash
 import org.web3j.crypto.Sign
-import java.math.BigInteger
 
 /**
  * Created by itock on 7/18/2017.
@@ -74,19 +72,46 @@ class ResponseActivity : AppCompatActivity() {
     }
 
     private fun generateTokenResponse(token: String): String {
-        val privateKey = "0000000000000000000000000000000000000000000000000000000000000001"
-        val keyPair = ECKeyPair.create(BigInteger(privateKey, 16))
 
-        val messageHash = Hash.sha3(token.toByteArray())
-        val signedMessage = Sign.signMessage(messageHash, keyPair)
+        fun toByteArray(hexString: String): ByteArray {
+            val hexChars = "0123456789abcdef"
 
-        var r = ""
-        for (b in signedMessage.r) r += String.format("%02x", b)
+            val result = ByteArray(hexString.length / 2)
 
-        var s = ""
-        for (b in signedMessage.s) s += String.format("%02x", b)
+            for (i in 0 until hexString.length step 2) {
+                val firstIndex = hexChars.indexOf(hexString[i])
+                val secondIndex = hexChars.indexOf(hexString[i + 1])
 
-        return "0x$r${s}0${signedMessage.v-27}"
+                val octet = (firstIndex shl 4) or secondIndex
+                result[i.shr(1)] = octet.toByte()
+            }
+
+            return result
+        }
+
+        fun toHexString(byteArray: ByteArray): String {
+            val hexChars = "0123456789abcdef".toCharArray()
+
+            val result = StringBuffer()
+
+            for (i in byteArray) {
+                val octet = i.toInt()
+                val firstIndex = (octet and 0xf0) ushr 4
+                val secondIndex = octet and 0x0f
+
+                result.append(hexChars[firstIndex])
+                result.append(hexChars[secondIndex])
+            }
+
+            return result.toString()
+        }
+
+        val privateKey = "208065a247edbe5df4d86fbdc0171303f23a76961be9f6013850dd2bdc759bbb"
+        val keyPair = ECKeyPair.create(toByteArray(privateKey))
+
+        val signedMessage = Sign.signMessage(token.toByteArray(), keyPair)
+
+        return "0x${toHexString(signedMessage.r)}${toHexString(signedMessage.s)}0${signedMessage.v - 27}"
     }
 
     private fun generateQr(text: String): Bitmap {
