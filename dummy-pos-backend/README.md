@@ -1,14 +1,6 @@
 # DUMMY-POS-BACKEND
 A dummy for COMET Point of Sales app. Real merchant can use their own implementation to write to the blockchain.
 
-## How to install
-```
-1. npm install
-2. npm install -g ethereumjs-testrpc
-3. testrpc
-4. npm start
-```
-
 ## API List
 
 API List
@@ -16,6 +8,8 @@ API List
 [GET] /accounts
 [GET] /accounts/{address}/balance
 [POST] /transactions
+// admin only
+[POST] /transactions/topup
 ```
 
 ## EXAMPLES
@@ -77,6 +71,29 @@ Output:
     "from": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
     "balance_before": "1000",
     "balance_after": "900"
+  }
+}
+```
+
+### [POST] /transactions/topup
+Topup account.
+
+Input: 
+```
+// URL:
+http://baseurl:port/transactions/topup
+// JSON:
+{
+  "address": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+  "value": 2000
+}
+```
+Output:
+```json
+{
+  "result": {
+    "address": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+    "balance": "3000"
   }
 }
 ```

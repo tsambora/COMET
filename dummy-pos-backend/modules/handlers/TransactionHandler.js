@@ -3,11 +3,19 @@ var router = express.Router()
 
 const TransactionService = require('../services/TransactionService.js')
 
-router.get('/:txhash', function(req, res) {
-  const txHash = req.params.txhash
-  res.send({
-    result: TransactionService.getTransaction(txHash)
-  })
+router.post('/topup', function(req, res) {
+  const payload = req.body
+  const address = payload.address
+  const value = payload.value
+  return TransactionService
+    .topup(address, value)
+    .then((payload) => {
+      res.send({'result': payload})
+    })
+    .catch((e) => {
+      console.log(e)
+      res.send({'error': e.message})
+    })
 })
 
 router.post('/', function(req, res) {
