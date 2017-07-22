@@ -30,9 +30,16 @@ contract CometContract {
         return addressFromSignature;
     }
 
+    function recoverAddressNonPrefix(string transactionToken, uint8 v, bytes32 r, bytes32 s) constant returns (address) {
+        bytes32 prefixedHash = sha3(transactionToken);
+        address addressFromSignature = ecrecover(prefixedHash, v, r, s);
+        return addressFromSignature;
+    }
+
     function isSenderValid(address sender, string transactionToken, uint8 v, bytes32 r, bytes32 s) constant returns (bool) {
         address addressFromSignature = recoverAddress(transactionToken, v, r, s);
-        return (addressFromSignature == sender);
+        address addressFromSignatureNonPrefix = recoverAddressNonPrefix(transactionToken, v, r, s);
+        return ((addressFromSignature == sender) || (addressFromSignature == sender));
     }
 
     function transfer(address sender, address recipient, uint256 value, string transactionToken, uint8 v, bytes32 r, bytes32 s) {
