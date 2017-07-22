@@ -15,7 +15,7 @@ const contractObject = new ContractObject(web3, CONTRACT_NAME, SOL)
 const commonwealthAddr = web3.eth.accounts[0]
 const commonwealthToken = '000000'
 
-contractObject.getContractInstance(commonwealthAddr, [10000000])
+contractObject.getContractInstance(commonwealthAddr, [10000000000])
   .then((contractInstance) => {
     console.log('')
     console.log('contractInstance created with address: ')
