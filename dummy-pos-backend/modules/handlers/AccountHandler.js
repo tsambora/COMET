@@ -11,9 +11,15 @@ router.get('/', function(req, res) {
 
 router.get('/:address/balance', function(req, res) {
   const address = req.params.address
-  res.send({
-    result: AccountService.getBalance(address)
-  })
+  return AccountService
+    .getBalance(address)
+    .then((payload) => {
+      res.send({'result': payload})    
+    })
+    .catch((e) => {
+      console.log(e)
+      res.send({'error': e.message})
+    })
 })
 
 module.exports = router
