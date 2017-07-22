@@ -72,7 +72,6 @@ class ResponseActivity : AppCompatActivity() {
     }
 
     private fun generateTokenResponse(token: String): String {
-
         fun toByteArray(hexString: String): ByteArray {
             val hexChars = "0123456789abcdef"
 
