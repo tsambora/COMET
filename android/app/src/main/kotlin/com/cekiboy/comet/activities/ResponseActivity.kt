@@ -83,7 +83,7 @@ class ResponseActivity : AppCompatActivity() {
                 val secondIndex = hexChars.indexOf(hexString[i + 1])
 
                 val octet = (firstIndex shl 4) or secondIndex
-                result[i.shr(1)] = octet.toByte()
+                result[(i shr 1)] = octet.toByte()
             }
 
             return result
