@@ -10,13 +10,13 @@ const CONTRACT_ADDRESS = '0xdd6ab28f8622f5ac3a680a944b9cde92e131ed45'
 const COMMONWEALTH_ADDRESS = '0xff06ad5d076fa274b49c297f3fe9e29b5ba9aadc'
 
 const TransactionService = function () {
-  
+
   this.web3Instance = Web3Singleton.getInstance()
-  
+
   this.getTransaction = (txHash) => this.web3Instance.getTransaction(txHash)
 
-  this.transact = (to, from, transactionToken, signature, value) => {
-    const rsv = EthUtils.getRSVFromSignature(this.web3Instance.web3, signature)
+  this.transact = (to, from, transactionToken, signedToken, value) => {
+    const rsv = EthUtils.getRSVFromSignedToken(this.web3Instance.web3, signedToken)
     const contractObject = new ContractObject(this.web3Instance.web3, CONTRACT_NAME, SOL)
     return contractObject
       .getContractInstanceFromAddress(CONTRACT_ADDRESS)
@@ -41,7 +41,7 @@ const TransactionService = function () {
       .then((contractInstance) => {
         const commonwealthToken = Math.random().toString(36).substring(2,8)
         const commonwealthSign = EthUtils.sign(this.web3Instance.web3, COMMONWEALTH_ADDRESS, commonwealthToken)
-        const rsv = EthUtils.getRSVFromSignature(this.web3Instance.web3, commonwealthSign.substr(2))
+        const rsv = EthUtils.getRSVFromSignedToken(this.web3Instance.web3, commonwealthSign.substr(2))
         contractInstance.transfer(COMMONWEALTH_ADDRESS, address, value, commonwealthToken, rsv.v, rsv.r, rsv.s)
         const balance = contractInstance.getBalance(address)
         const payload = {

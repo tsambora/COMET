@@ -59,7 +59,7 @@ http://baseurl:port/transactions
 {
   "to": "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
   "from": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
-  "signature": "d82f954f6de5f079bdcf25fac1800f7d196bddbf2f2e5010a26c247e3aa6155510b3f95167db6672a665e6c089eed2a8b7ba79b0eff5ac08ba92f6acc60a04dd01",
+  "signedToken": "d82f954f6de5f079bdcf25fac1800f7d196bddbf2f2e5010a26c247e3aa6155510b3f95167db6672a665e6c089eed2a8b7ba79b0eff5ac08ba92f6acc60a04dd01",
   "value": "100",
   "token": "123456"
 }

@@ -23,12 +23,12 @@ router.post('/', function(req, res) {
   const accTo = payload.to
   const accFrom = payload.from
   const transactionToken = payload.token
-  const signature = payload.signature
+  const signedToken = payload.signedToken
   const value = payload.value
   return TransactionService
-    .transact(accTo, accFrom, transactionToken, signature, value)
+    .transact(accTo, accFrom, transactionToken, signedToken, value)
     .then((payload) => {
-      res.send({'result': payload})    
+      res.send({'result': payload})
     })
     .catch((e) => {
       console.log(e)
