@@ -1,5 +1,5 @@
 # DUMMY-POS-BACKEND
-A dummy for Comet Point of Sale app. Real merchant can use their own implementation to write to the blockchain.
+A dummy for COMET Point of Sales app. Real merchant can use their own implementation to write to the blockchain.
 
 ## How to install
 ```

@@ -1,5 +1,8 @@
 package com.cekiboy.comet.activities
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.NavUtils
@@ -13,6 +16,8 @@ import android.widget.TextView
 import com.cekiboy.comet.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
+import org.web3j.crypto.ECKeyPair
+import org.web3j.crypto.Sign
 
 /**
  * Created by itock on 7/18/2017.
@@ -39,6 +44,11 @@ class ResponseActivity : AppCompatActivity() {
         supportActionBar?.title = null
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        textViewResponse?.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            clipboard.primaryClip = ClipData.newPlainText(null, textViewResponse?.text)
+        }
+
         val token = intent.getStringExtra(EXTRA_TRANSACTION_TOKEN)
 
         if (!token.isNullOrEmpty()) {
@@ -62,8 +72,45 @@ class ResponseActivity : AppCompatActivity() {
     }
 
     private fun generateTokenResponse(token: String): String {
-        // TODO: generate token response
-        return token
+        fun toByteArray(hexString: String): ByteArray {
+            val hexChars = "0123456789abcdef"
+
+            val result = ByteArray(hexString.length / 2)
+
+            for (i in 0 until hexString.length step 2) {
+                val firstIndex = hexChars.indexOf(hexString[i])
+                val secondIndex = hexChars.indexOf(hexString[i + 1])
+
+                val octet = (firstIndex shl 4) or secondIndex
+                result[(i shr 1)] = octet.toByte()
+            }
+
+            return result
+        }
+
+        fun toHexString(byteArray: ByteArray): String {
+            val hexChars = "0123456789abcdef".toCharArray()
+
+            val result = StringBuffer()
+
+            for (i in byteArray) {
+                val octet = i.toInt()
+                val firstIndex = (octet and 0xf0) ushr 4
+                val secondIndex = octet and 0x0f
+
+                result.append(hexChars[firstIndex])
+                result.append(hexChars[secondIndex])
+            }
+
+            return result.toString()
+        }
+
+        val privateKey = "208065a247edbe5df4d86fbdc0171303f23a76961be9f6013850dd2bdc759bbb"
+        val keyPair = ECKeyPair.create(toByteArray(privateKey))
+
+        val signedMessage = Sign.signMessage(token.toByteArray(), keyPair)
+
+        return "0x${toHexString(signedMessage.r)}${toHexString(signedMessage.s)}0${signedMessage.v - 27}"
     }
 
     private fun generateQr(text: String): Bitmap {
