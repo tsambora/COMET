@@ -17,7 +17,7 @@ export default class CometInitModal extends Component {
         this.state = {
             token: null,
             barcode: '',
-            submitting: false,
+            submitting: false
         }
 
         this._handleKeyPress = this._handleKeyPress.bind(this)
@@ -25,7 +25,7 @@ export default class CometInitModal extends Component {
 
     componentDidMount() {
         this.setState({
-            token: (Math.floor(Math.random() * 900000) + 100000).toString()
+            token: '000002'
         })
     }
 
@@ -94,10 +94,17 @@ export default class CometInitModal extends Component {
         if (e.key === 'Enter') {
             this.setState({ submitting: true })                            
             
-            const { baseApiUrl, buyerId, merchantId } = appConfig
+            const { baseApiUrl, merchantId } = appConfig
+            const transactionData = e.target.value.split(',');
+            const buyerId = transactionData[0];
+            const signed_token = transactionData[1];
+            const token = this.state.token;
+
             axios.post(`${baseApiUrl}/transactions`, {
                 from: buyerId,
                 to: merchantId,
+                signed_token,
+                token,
                 value: '1'
             })
             .then(res => {
