@@ -11,3 +11,7 @@ To run the project with dev setting, use the command below:
 ```
 npm run dev
 ```
+To run the project with production setting, use the command below:
+```
+npm start
+```

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Match } from 'react-router'
-import { Provider } from 'react-redux'
 import AppContainer from 'grommet/components/App'
 
 import Header from './Header'
