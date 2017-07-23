@@ -25,7 +25,7 @@ export default class CometInitModal extends Component {
 
     componentDidMount() {
         this.setState({
-            token: '000002'
+            token: (Math.floor(Math.random() * 900000) + 100000).toString()
         })
     }
 
