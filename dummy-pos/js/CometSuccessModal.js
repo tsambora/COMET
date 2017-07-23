@@ -41,13 +41,13 @@ export default class CometSuccessModal extends Component {
                             tag='h4'
                             align='center'
                             margin='none'>
-                            {`Buyer's balance (before): ${this.props.balance_before}`}
+                            {`Buyer's balance (before): $${this.props.balance_before}`}
                         </Heading>
                         <Heading
                             tag='h4'
                             align='center'
                             margin='none'>
-                            {`Buyer's balance (after): ${this.props.balance_after}`}
+                            {`Buyer's balance (after): $${this.props.balance_after}`}
                         </Heading>
                     </Box>
                 </Box>
