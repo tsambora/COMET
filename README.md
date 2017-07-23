@@ -23,7 +23,7 @@ docker exec -it dummy-pos-backend node scripts/init-contract-and-seed-account.js
 2. apk is stored on android/app/build/outputs
 ```
 
-### Steps to Do Demo Transactions with COMET
+### Steps for Doing Transactions with COMET
 
 ```
 1. Use web frontend app to generate transaction token
