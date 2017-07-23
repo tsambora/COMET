@@ -35,7 +35,7 @@ export default class CometSuccessModal extends Component {
                             tag='h4'
                             align='center'
                             margin='none'>
-                            (we're showing buyer's balance for demo purpose only)
+                            (we're showing buyer's balance for demo purpose only, to show that the smart contract is working)
                         </Heading>
                         <Heading
                             tag='h4'
