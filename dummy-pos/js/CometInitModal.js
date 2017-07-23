@@ -108,9 +108,13 @@ export default class CometInitModal extends Component {
                 value: '1'
             })
             .then(res => {
-                this.setState({ barcode: '', submitting: false })                
+                this.setState({ barcode: '', submitting: false })          
                 this.props.toggleCometInitModal()
-                this.props.toggleCometSuccessModal()
+                if (res.data.result) {
+                    this.props.toggleCometSuccessModal()
+                } else {
+                    this.props.toggleCometFailedModal()
+                }
             })
         }
     }

@@ -7,6 +7,7 @@ import Cart from './Cart'
 import PaymentModal from './PaymentModal'
 import CometInitModal from './CometInitModal'
 import CometSuccessModal from './CometSuccessModal'
+import CometFailedModal from './CometFailedModal'
 
 import { catalog } from './merchantData'
 
@@ -17,12 +18,14 @@ export default class Home extends Component {
         this.state = {
             showPaymentModal: false,
             showCometInitModal: false,
-            showCometSuccessModal: false
+            showCometSuccessModal: false,
+            showCometFailedModal: false
         }
 
         this.togglePaymentModal = this.togglePaymentModal.bind(this)
         this.toggleCometInitModal = this.toggleCometInitModal.bind(this)
         this.toggleCometSuccessModal = this.toggleCometSuccessModal.bind(this)
+        this.toggleCometFailedModal = this.toggleCometFailedModal.bind(this)
     }
 
     togglePaymentModal() {
@@ -35,6 +38,10 @@ export default class Home extends Component {
 
     toggleCometSuccessModal() {
         this.setState({ showCometSuccessModal: !this.state.showCometSuccessModal })
+    }
+
+    toggleCometFailedModal() {
+        this.setState({ showCometFailedModal: !this.state.showCometFailedModal })
     }
 
     render() {
@@ -56,13 +63,20 @@ export default class Home extends Component {
                     this.state.showCometInitModal ?
                         <CometInitModal
                             toggleCometInitModal={this.toggleCometInitModal}
-                            toggleCometSuccessModal={this.toggleCometSuccessModal} />
+                            toggleCometSuccessModal={this.toggleCometSuccessModal}
+                            toggleCometFailedModal={this.toggleCometFailedModal} />                            
                         : null
                 }
                 {
                     this.state.showCometSuccessModal ?
                         <CometSuccessModal
                             toggleCometSuccessModal={this.toggleCometSuccessModal} />
+                        : null
+                }
+                {
+                    this.state.showCometFailedModal ?
+                        <CometFailedModal
+                            toggleCometFailedModal={this.toggleCometFailedModal} />
                         : null
                 }
             </Section>
