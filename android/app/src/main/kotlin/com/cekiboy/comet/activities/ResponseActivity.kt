@@ -32,7 +32,7 @@ class ResponseActivity : AppCompatActivity() {
     private var toolbar: Toolbar? = null
     private var imageViewQr: ImageView? = null
     private var textViewResponse: TextView? = null
-    private var privateKey = "208065a247edbe5df4d86fbdc0171303f23a76961be9f6013850dd2bdc759bbb"
+    private var privateKey = "0000000000000000000000000000000000000000000000000000000000000002"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
