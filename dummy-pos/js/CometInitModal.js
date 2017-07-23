@@ -100,22 +100,30 @@ export default class CometInitModal extends Component {
             const signed_token = transactionData[1];
             const token = this.state.token;
 
-            axios.post(`${baseApiUrl}/transactions`, {
-                from: buyerId,
-                to: merchantId,
-                signed_token,
-                token,
-                value: '1'
-            })
-            .then(res => {
-                this.setState({ barcode: '', submitting: false })          
+            if (!buyerId || !signed_token) {
+                alert('invalid input format')
                 this.props.toggleCometInitModal()
-                if (res.data.result) {
-                    this.props.toggleCometSuccessModal()
-                } else {
-                    this.props.toggleCometFailedModal()
-                }
-            })
+                this.props.toggleCometFailedModal()
+            } else {
+                axios.post(`${baseApiUrl}/transactions`, {
+                    from: buyerId,
+                    to: merchantId,
+                    signed_token,
+                    token,
+                    value: '121'
+                })
+                .then(res => {
+                    this.setState({ barcode: '', submitting: false })          
+                    this.props.toggleCometInitModal()
+                    if (res.data.result) {
+                        const { balance_before, balance_after} = res.data.result
+                        this.props.setBalance(balance_before, balance_after)
+                        this.props.toggleCometSuccessModal()
+                    } else {
+                        this.props.toggleCometFailedModal()
+                    }
+                })
+            }
         }
     }
 }

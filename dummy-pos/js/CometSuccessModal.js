@@ -28,6 +28,28 @@ export default class CometSuccessModal extends Component {
                         pad='medium'>
                         <CheckmarkIcon size='large' />
                     </Box>
+                    <Box
+                        align='center'
+                        pad='medium'>
+                        <Heading
+                            tag='h4'
+                            align='center'
+                            margin='none'>
+                            (we're showing buyer's balance for demo purpose only)
+                        </Heading>
+                        <Heading
+                            tag='h4'
+                            align='center'
+                            margin='none'>
+                            {`Buyer's balance (before): ${this.props.balance_before}`}
+                        </Heading>
+                        <Heading
+                            tag='h4'
+                            align='center'
+                            margin='none'>
+                            {`Buyer's balance (after): ${this.props.balance_after}`}
+                        </Heading>
+                    </Box>
                 </Box>
             </Layer>
         )

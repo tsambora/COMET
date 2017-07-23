@@ -19,7 +19,9 @@ export default class Home extends Component {
             showPaymentModal: false,
             showCometInitModal: false,
             showCometSuccessModal: false,
-            showCometFailedModal: false
+            showCometFailedModal: false,
+            balance_before: null,
+            balance_after: null,
         }
 
         this.togglePaymentModal = this.togglePaymentModal.bind(this)
@@ -38,6 +40,10 @@ export default class Home extends Component {
 
     toggleCometSuccessModal() {
         this.setState({ showCometSuccessModal: !this.state.showCometSuccessModal })
+    }
+
+    setBalance(balance_before, balance_after) {
+        this.setState({ balance_before, balance_after })
     }
 
     toggleCometFailedModal() {
@@ -64,12 +70,15 @@ export default class Home extends Component {
                         <CometInitModal
                             toggleCometInitModal={this.toggleCometInitModal}
                             toggleCometSuccessModal={this.toggleCometSuccessModal}
+                            setBalance={(balance_before, balance_after) => { this.setBalance(balance_before, balance_after) }}
                             toggleCometFailedModal={this.toggleCometFailedModal} />                            
                         : null
                 }
                 {
                     this.state.showCometSuccessModal ?
                         <CometSuccessModal
+                            balance_before={this.state.balance_before}
+                            balance_after={this.state.balance_after}
                             toggleCometSuccessModal={this.toggleCometSuccessModal} />
                         : null
                 }
