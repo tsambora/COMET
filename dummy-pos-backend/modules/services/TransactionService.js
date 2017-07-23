@@ -16,7 +16,7 @@ const TransactionService = function () {
   this.getTransaction = (txHash) => this.web3Instance.getTransaction(txHash)
 
   this.transact = (to, from, transactionToken, signedToken, value) => {
-    const rsv = EthUtils.getRSVFromSignedToken(this.web3Instance.web3, signedToken)
+    const rsv = EthUtils.getRSVFromSignedToken(this.web3Instance.web3, signedToken.substr(2))
     const contractObject = new ContractObject(this.web3Instance.web3, CONTRACT_NAME, SOL)
     return contractObject
       .getContractInstanceFromAddress(CONTRACT_ADDRESS)
