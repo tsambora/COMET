@@ -13,6 +13,7 @@ import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.cekiboy.comet.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
@@ -48,6 +49,7 @@ class ResponseActivity : AppCompatActivity() {
         textViewResponse?.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             clipboard.primaryClip = ClipData.newPlainText(null, textViewResponse?.text)
+            Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_SHORT).show()
         }
 
         val token = intent.getStringExtra(EXTRA_TRANSACTION_TOKEN)
