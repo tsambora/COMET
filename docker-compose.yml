@@ -1,5 +1,18 @@
 version: '2'
 services:
+  dummy-pos:
+    build: dummy-pos
+    restart: on-failure
+    container_name: dummy-pos
+    hostname: dummy-pos
+    links:
+      - dummy-pos-backend
+    depends_on:
+      - dummy-pos-backend
+    environment:
+      - BASE_API_URL=http://dummy-pos-backend:3000
+    ports:
+      - "8080:8080"
   dummy-pos-backend:
     build: dummy-pos-backend
     restart: on-failure

@@ -1,8 +1,9 @@
 # COMET
 
-### How to deploy.
+### How to deploy Ethereum Blockchain private network and dummy Point of Sales App
 
-```sh
+```
+sh
 git clone https://github.com/tsambora/comet
 cd comet
 ./deploy.sh
@@ -15,7 +16,23 @@ docker-compose up -d
 docker exec -it dummy-pos-backend node scripts/init-contract-and-seed-account.js
 ```
 
-### Available accounts.
+### How to deploy COMET Android app
+
+```
+1. run gradle assemble from source code COMET/android
+2. apk is stored on android/app/build/outputs
+```
+
+### Steps to Do Demo Transactions with COMET
+
+```
+1. Use web frontend app to generate transaction token
+2. Insert the token to the Android app and generate the QR code
+3. Use QR code scanner or copy the string manually (just tap the text to copy) and fill the form on web frontend app
+4. The transaction will be verified and processed with Ethereum Smart contract
+```
+
+### Available accounts
 
 ```
 merchant 
@@ -29,4 +46,12 @@ address = 0x2b5ad5c4795c026514f8317c7a215e218dccd6cf
 privateKey = 0x0000000000000000000000000000000000000000000000000000000000000002
 transactionToken = 000002
 signedToken = 0x84d0375945941ba6863acd8c0202bfe0701bbda5d41c68c8594463492692d31f01055f4bd9d13a23100eab18a4b4a22bb31f31d39751881f347ef6222e3c2a7600
+```
+
+### Demo Urls
+
+```
+Backend : http://139.59.120.226:3000, 
+Merchant frontend : http://139.59.120.226:8080, 
+Android apk : https://drive.google.com/open?id=0B4pr8rhBwPkSQ3hmZUlYM2xCSHc
 ```
