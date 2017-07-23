@@ -23,7 +23,7 @@ router.post('/', function(req, res) {
   const accTo = payload.to
   const accFrom = payload.from
   const transactionToken = payload.token
-  const signedToken = payload.signedToken
+  const signedToken = payload.signed_token
   const value = payload.value
   return TransactionService
     .transact(accTo, accFrom, transactionToken, signedToken, value)
