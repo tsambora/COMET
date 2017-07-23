@@ -123,7 +123,7 @@ class ResponseActivity : AppCompatActivity() {
         val displayWidth = displayMetrics.widthPixels
         val displayHeight = displayMetrics.heightPixels
 
-        val dimension = (Math.min(displayWidth, displayHeight) * .8).toInt()
+        val dimension = (Math.min(displayWidth, displayHeight) * .9).toInt()
 
         val writer = MultiFormatWriter()
         val result = writer.encode(text, BarcodeFormat.QR_CODE, dimension, dimension, null)
