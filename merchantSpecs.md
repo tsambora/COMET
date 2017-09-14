@@ -1,4 +1,4 @@
-##COMET API Spec
+# COMET API Spec
 
 This is the API spec of COMET for merchant's perusal.
 
@@ -6,7 +6,7 @@ This spec will guide you through implementing COMET in your online store site. T
 
 [gambar comet init modal, ampe sukses]
 
-##Overview
+## Overview
 There are two ways to integrate COMET payment prompt to your site:
 
 1. Use COMET as a JS class
@@ -14,7 +14,7 @@ There are two ways to integrate COMET payment prompt to your site:
 
 Before integrating COMET SDK, you have to first download COMET blockchain ledger. The SDK will not be usable unless the merchant has the current state of the blockchain.
 
-##COMET usage as a JS class
+## COMET usage as a JS class
 You can integrate COMET by importing COMET SDK and make a function call somewhere in your payment code.
 
 Import COMET SDK by adding this script tag in your HTML head.
@@ -34,7 +34,7 @@ Calling `Comet.init()` will trigger the comet payment prompt to appear.
 
 The rest part of the payment is as described in our demo. The COMET SDK will process the user input and cross check it with the blockchain.
 
-##COMET usage as a react component
+## COMET usage as a react component
 If your merchant app is a react app. You can integrate COMET by using COMET react component.
 
 Import COMET SDK by adding this script tag in your HTML head.
