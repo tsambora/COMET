@@ -1,10 +1,11 @@
-# COMET API Spec
+# COMET SDK Specification
 
-This is the API spec of COMET for merchant's perusal.
+This is COMET SDK specification and guide for merchant's integration.
 
 This spec will guide you through implementing COMET in your online store site. The image shown below is the example of COMET payment prompt that is already integrated to a merchant's website.
 
-[gambar comet init modal, ampe sukses]
+![](https://i.imgur.com/McmE7vt.png)
+![](https://i.imgur.com/mcPowhb.png)
 
 ## Overview
 There are two ways to integrate COMET payment prompt to your site:
@@ -30,7 +31,7 @@ Comet.init(blockChainDir, merchantId);
 `merchantId` is your COMET merchant id.
 
 Calling `Comet.init()` will trigger the comet payment prompt to appear.
-[gambar comet init modal]
+![](https://i.imgur.com/McmE7vt.png)
 
 The rest part of the payment is as described in our demo. The COMET SDK will process the user input and cross check it with the blockchain.
 
@@ -59,6 +60,6 @@ then add it to your component's render function, along with the logic of when it
 ```
 
 Adding `<CometInitModal />` to your page's render function will trigger the comet payment prompt to appear.
-[gambar comet init modal]
+![](https://i.imgur.com/McmE7vt.png)
 
 The rest part of the payment is as described in our demo. The COMET SDK will process the user input and cross check it with the blockchain.
