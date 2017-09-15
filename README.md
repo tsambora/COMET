@@ -1,5 +1,8 @@
 # COMET
 
+### COMET SDK Specification
+This URL contains a specification and a guide for merchant integration: https://hackmd.io/s/Bk697dO5-
+
 ### How to deploy Ethereum Blockchain private network and dummy Point of Sales App
 
 ```
@@ -55,6 +58,3 @@ Backend : http://139.59.120.226:3000,
 Merchant frontend : http://139.59.120.226:8080, 
 Android apk : https://drive.google.com/open?id=0B4pr8rhBwPkSQ3hmZUlYM2xCSHc
 ```
-
-### COMET SDK Specification
-This URL contains a specification and a guide for merchant integration: https://hackmd.io/s/Bk697dO5-
