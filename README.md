@@ -1,5 +1,6 @@
 # COMET
 Comet is an offline payment solution that leverages the power of blockchain. This project is selected as top 37 project globally at UnitedByHCL Hackathon 2017. Comet consists of an Android app built with Kotlin, a frontend web built with React JS, a backend built with Node JS, and a blockchain network built with Ethereum test network.
+More info : https://drive.google.com/open?id=1sYsKMT48MVYODKwLjj0dw_OWM53aDXUu
 
 ### COMET SDK Specification
 This URL contains a specification and a guide for merchant integration: https://hackmd.io/s/Bk697dO5-
